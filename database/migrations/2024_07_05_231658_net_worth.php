@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('net_worth', function(Blueprint $table){
             $table->id();
+            $table->unsignedBigInteger('networth_user_id')->nullable();
             $table->foreign('networth_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->decimal('assets', 15, 2);
             $table->decimal('liabilities', 15, 2);
@@ -27,5 +28,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('net_worth');
+        // Schema::table('net_worth', function(Blueprint $table){
+        //     $table->dropForeign(['networth_user_id']);
+        //     $table->dropColumn('networth_user_id');
+        // });
     }
 };

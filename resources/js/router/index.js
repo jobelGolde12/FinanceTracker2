@@ -72,6 +72,21 @@ const routes = [
         path: '/loading',
         name: 'loading',
         component: () => import('../components/Loading.vue')
+    },
+    {
+        path: '/someQuestions',
+        name: 'someQuestions',
+        component: () => import('../components/someQuestionsFolder/SomeQuestions.vue')
+    },
+    {
+        path: '/someQuestionsLeft',
+        name: 'someQuestionsLeft',
+        component: () => import('../components/someQuestionsFolder/SomeQuestionsLeft.vue')
+    },
+    {
+        path: '/someQuestionsRight',
+        name: 'someQuestionsRight',
+        component: () => import('../components/someQuestionsFolder/SomeQuestionsRight.vue')
     }
 ];
 

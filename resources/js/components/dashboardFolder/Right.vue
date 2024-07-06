@@ -40,7 +40,7 @@
 
 
         <div class="bottom-right-icon bg-success p-1" @mouseover="overQuestionFunc" @mouseleave="leaveQuestionFunc">
-            <i class="bi bi-question text-light m-0"></i>
+            <router-link to="/someQuestions" class="bi bi-question text-light m-0"></router-link>
         </div>
 
         <div class="bottom-right-icon-text bg-success p-1">

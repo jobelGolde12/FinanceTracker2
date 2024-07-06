@@ -1,5 +1,5 @@
 <template>
-<div class="login-body bg-gradient d-flex justify-content-center align-items-center">
+<div class="login-body d-flex justify-content-center align-items-center">
 
     <!-- This allert will show up when the user input the wrong username or password  -->
     <div class="alert bg-glass wrong-username-or-password">
@@ -9,31 +9,19 @@
 
     <!-- This is the actual form for loggin in  -->
     <form class="form bg-glass p-4" @submit.prevent="submitForm">
-        <h4 class="text-light fw-normal text-center">Login</h4>
-        <!-- <div class="input-group mb-2">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" v-model="formData.name" required/>
-        </div> -->
-
+        <h4 class="text-dark fw-normal text-center">Login</h4>
         <div>
             <label class="d-block">
                 Username: 
             </label>
-            <input class="px-1 py-2 text-light" type="text" placeholder="Mario" v-model="formData.name" required id="username">
+            <input class="px-1 py-2 text-muted no-outline" type="text" placeholder="Mario" v-model="formData.name" required id="username">
         </div>
 
-        <!-- <div class="input-group mb-1">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock"></i></span>
-            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" id="password" v-model="formData.password" required>
-            <i class="bi bi-eye me-2 pt-1 pointer hover" @click="toggleEyeFunc"></i>
-            <i class="bi bi-eye-slash me-2 pt-1 pointer hover" @click="toggleEyeFunc"></i>
-        </div> -->
-
-        <div>
-            <label class="d-block">
-                Password: 
-            </label>
-            <input class="px-1 py-2 text-light" type="password" placeholder="superMario123" v-model="formData.password" required id="password">
+        <div class="input-group mb-2 mt-2">
+            <label class="d-block" >Password: </label>
+            <input type="password" class="password no-outline text-muted" placeholder="supermario123" v-model="formData.password" required id="password">
+            <i class="bi bi-eye me-2 pt-1 pointer hover mt-2" @click="toggleEyeFunc"></i>
+            <i class="bi bi-eye-slash me-2 pt-1 pointer hover mt-2" @click="toggleEyeFunc"></i>
         </div>
 
         <p class="text-danger pt-0 pb-0" v-if="lessThan8Char">Password not less than 8 character long</p>
@@ -41,9 +29,9 @@
             Login
         </button>
         <div class="container text-center mt-2">
-            <p class="text-light fw-light">
+            <p class="text-dark">
                 Didn't have an account? |
-                <router-link to="/signup" class="text-light">signup</router-link>
+                <router-link to="/signup" class="">signup</router-link>
             </p>
         </div>
     </form>
@@ -156,6 +144,9 @@ export default {
     left: 0;
     width: 100vw;
     height: 100vh;
+    background: url('../../../images/bg1.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .form .input-group input {
