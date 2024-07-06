@@ -1,0 +1,11 @@
+
+.left-body .text-decoration-none{
+    border-radius: 20px 0 0 20px;
+    margin-left: .5 rem;
+    font-size: .9rem;
+    display: block;
+}
+
+.left-body .text-decoration-none:hover{
+    background: rgba(0, 0, 0, .1);
+}

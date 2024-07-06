@@ -1,0 +1,42 @@
+.dashboard-main-container{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+}
+.dashboard-main-container .left{
+    position: relative;
+    width: 15%;
+    height: 100%;
+}
+.dashboard-main-container .center{
+    position: relative;
+    width: 55%;
+    height: 100%;
+}
+.dashboard-main-container .right{
+    position: relative;
+    width: 30%;
+    height: 100%;
+}
+@media screen and (max-width: 900px){
+    .dashboard-main-container .right{
+        display: none;
+    }
+    .dashboard-main-container .center{
+        flex-grow: 1;
+    }
+    .dashboard-main-container .left{
+        width: 20%;
+    }
+}
+@media screen and (max-width: 750px){
+    .dashboard-main-container .center{
+        flex-grow: 1;
+    }
+    .dashboard-main-container .left{
+        display: none;
+    }
+}

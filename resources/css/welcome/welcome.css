@@ -1,0 +1,136 @@
+section{
+    width: 100vw;
+    height: 100vh;
+}
+#home{
+    background: url('../../images/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#home .header{
+    padding: .5rem 1rem;
+}
+.header-right .link{
+    color: var(--color-primary);
+}
+.navbar .link{
+    color: var(--color-secondary);
+}
+.navbar > div{
+    position: absolute;
+    width: 100%;
+}
+.header-right .link:hover , .navbar .link:hover{
+    color: var(--hover-primary);
+}
+.hero-container h1 {
+    font-family: "Notable", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.5rem;
+}
+.hero-container p{
+    font-weight: lighter;
+}
+.header .hamburger{
+    display: none;
+    color: #fff;
+}
+.header .header-right{
+    display: flex;
+}
+.hero-footer{
+    position: absolute;
+    bottom: 0;
+}
+.navbar{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 20vh;
+    z-index: 100;
+}
+.introduction-bottom{
+    border-bottom: 1px solid var(--color-secondary);
+}
+.introduction-bottom .introduction-bottom-header {
+    transform: translateY(50%);
+    color: var(--color-secondary);
+    position: relative;
+    width: 30%;
+
+}
+.offcanvas .offcanvas-body div .link{
+    color: var(--color-secondary);
+}
+#features div .card{
+    border: none;
+    background: white;
+}
+#features div .card i{
+    font-size: 3rem;
+}
+#features{
+    height: auto;
+}
+#footer{
+    height: 50vh;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1500px){
+    .hero-container h1{
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 950px){
+    .hero-container h1{
+        font-size: 2rem;
+    }
+    #features .card-container{
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    #footer{
+        flex-wrap: wrap;
+        height: auto;
+    }
+    #footer > div{
+        margin-top: 1rem;
+    }
+    #footer div h4{
+        color: var(--color-tri);
+    }
+}
+@media screen and (max-width: 750px){
+    .header .header-right{
+        display: none;
+    }
+    .header .hamburger{
+        display: block;
+    }
+    .header .hamburger:hover{
+        color: var(--hover-primary);
+    }
+    .header-left .logo{
+        margin-top: 1rem;
+    }
+    .introduction-top > div{
+    flex-wrap: wrap;
+    position: relative;
+    max-width: 100% !important;
+    }
+    #introduction div  p{
+        font-size: .8rem;
+    }
+    #introduction div h5{
+        font-size: 1rem;
+    }
+}
