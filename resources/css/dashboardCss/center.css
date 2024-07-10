@@ -38,7 +38,7 @@
     position: relative;
 }
 .center-body .card{
-    max-height: 130px;
+    /* max-height: 130px; */
     border: none;
 }
 .center-body .card .container h5{
@@ -70,6 +70,9 @@
     .center-header .container div .bi-list{
         flex: 2;
     }
+    .center-header .container .greet{
+        padding-top: 1rem;
+    }
 }
 @media screen and (max-width: 850px){
     .center-body .card{
@@ -85,6 +88,14 @@
 @media screen and (max-width: 900px){
     .container div .bi-list{
         display: block;
+    }
+    .center-body-container{
+        width: 100%;
+    }
+    .center-body #myDoughnutChart{
+        position: relative;
+        /* max-width: 100% !important;
+        max-height: 100% !important; */
     }
 }
 @media screen and (min-width: 900px){

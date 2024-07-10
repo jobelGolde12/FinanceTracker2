@@ -2,7 +2,7 @@
 <div class="center-body-container">
     <div class="center-header container-fluid d-flex justify-content-between align-items-center">
         <div class="container pt-3">
-            <p class="text-dark fw-light mb-0 pb-0"><span>{{ greetings }}</span> <span class="">{{ userData.username }}</span></p>
+            <p class="text-dark fw-light mb-0 pb-0 greet"><span>{{ greetings }}</span> <span class="">{{ userData.username }}</span></p>
             <h5 class="text-dark mt-0 pt-0">Your daily update</h5>
         </div>
 
@@ -10,13 +10,13 @@
             <!-- <div><router-link to="#" class="btn btn-success me-5">Click</router-link></div> -->
             <div><i class="bi bi-sun fs-4 ms-5 me-4 lg:ps-5 lg:ms-5 xl:ps-5 hover pointer text-dark" @click="toggleTheme" v-if="!lightTheme"></i></div>
             <div><i class="bi bi-moon fs-4 ms-5 me-4 lg:ps-5 lg:ms-5 xl:ps-5 hover pointer text-light" @click="toggleTheme" v-if="lightTheme"></i></div>
-            <div><i class="bi bi-list fs-4"></i></div>
+            <div><i class="bi bi-list fs-4 text-dark pointer" @click="navbarIsClicked"></i></div>
         </div>
     </div>
 
     <div class="center-body mt-3">
-        <div class="card card1 d-flex flex-row bg-light border-none gap-3 p-2 rounded justiy-content-between mt-3">
-            <div class="container me-5">
+        <div class="card card1 d-flex flex-row bg-light border-none  p-2 rounded gap-0 mt-3">
+            <div class="container">
                 <h5 class="text-dark fw-light mb-0 pb-0">Networth</h5>
                 <p class="text-dark fw-lighter pb-0 mb-0">Assets: <span class="text-success">{{ netWorth.assets }}</span></p>
                 <p class="text-dark fw-lighter pb-0 mb-0">Liabilities: <span class="text-success">{{ netWorth.liabilities }}</span></p>
@@ -24,7 +24,7 @@
                 <router-link class="btn btn-success" to="netWorth">View </router-link>
             </div>
 
-            <div class="container container ps-5 ms-5 text-dark">
+            <div class="ps-5 ms-5 text-dark ">
                 <canvas id="myDoughnutChart" class=" ms-5 text-dark"></canvas>
             </div>
         </div>
@@ -38,8 +38,8 @@
             </div>
         </div>
 
-        <div class="main-container mt-3 p-2">
-            <table class="table table-striped text-dark">
+        <div class="main-container container- mt-3 p-2">
+            <table class="table table-striped text-dark table-responsive">
                 <thead>
                     <tr>
                         <th class="text-dark bg-light">Date</th>
@@ -96,12 +96,12 @@ export default {
                 liabilities: 5000,
                 currentNetworth: 0
             },
-                    props: {
-            userData: {
-            type: Object,
-            required: true
-            }
-        },
+        //             props: {
+        //     userData: {
+        //     type: Object,
+        //     required: true
+        //     }
+        // },
             resentTransactionsData: [{
                     "id": 1,
                     "date": "2024-06-22",
@@ -286,9 +286,11 @@ export default {
                 let mainContainer = document.querySelector('.main-container')
                 mainContainer.style.maxHeight = '50%'
                 this.resentTransactionTableExpanded = false
+                console.log('50%')
             } else {
                 mainContainer.style.maxHeight = 'auto'
                 this.resentTransactionTableExpanded = true
+                console.log('auto')
             }
         },
         toggleResentTransactionDataFunc() {
@@ -355,6 +357,9 @@ export default {
         getCurrentNetworth(){
             let netWorth = this.netWorth.assets - this.netWorth.liabilities;
             this.netWorth.currentNetworth = netWorth;
+        },
+        navbarIsClicked(){
+            this.$emit('openNavBar', true);
         }
     },
     mounted() {
@@ -365,6 +370,7 @@ export default {
         this.getUsername()
         this.fetchTransaction()
         this.getCurrentNetworth()
+        console.log("From home this id is, " + this.id)
     }
 }
 </script>

@@ -9,15 +9,20 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container p-2">
             <h3 class="text-dark fw-light d-inline">Question: </h3>
             <span class="currentQuestion text-success">{{ currentQuestion }}</span>
         </div>
 
 
-        <div class="container mt-2">
+        <div class="container mt-2 p-2 pe-4" v-if="currentAnswer !== ''">
             <p class="text-dark fw-light d-inline">Answer </p> <br>
-            <span class="currentAnswer text-success">{{ currentAnswer }}</span>
+            <span class="currentAnswer text-dark">{{ currentAnswer }}</span>
+        </div>
+
+
+        <div class="container p-2">
+            <router-link to="/dashboard">Go Back</router-link>
         </div>
 
 
@@ -30,28 +35,29 @@ export default {
     data(){
         return{
             searchQuestion: '',
-            currentQuestion: 'What is net worth',
-            currentAnswer: 'blaaaaaaaa'
+            data: []
         }
     },
+    props : ['currentQuestion','currentAnswer'],
     methods: {
-       async getQuestions(){
-            try{
-                const res = await fetch('http://127.0.0.1:8000/getQuestions')
-                const data = await res.json()
+    //    async getQuestions(){
+    //         try{
+    //             const res = await fetch('http://127.0.0.1:8000/getQuestions')
+    //             const data = await res.json()
 
-                if(!res.ok){
-                    throw new Error('fetch error, ' + res.status);
+    //             if(!res.ok){
+    //                 throw new Error('fetch error, ' + res.status);
                     
-                }
-                console.log("The data is, " + data)
-            }catch(error){
-                console.log('Error while fething data' + error)
-            }
-        }
+    //             }
+    //             // console.log(data[0].answer)
+    //             this.data = data
+    //         }catch(error){
+    //             console.log('Error while fething data' + error)
+    //         }
+    //     }
     },
     mounted(){
-        this.getQuestions()
+        // this.getQuestions()
     }
 }
 </script>

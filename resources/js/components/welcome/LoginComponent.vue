@@ -7,6 +7,7 @@
     </div>
 
 
+    <div class="custom-bg-dark"></div>
     <!-- This is the actual form for loggin in  -->
     <form class="form bg-glass p-4" @submit.prevent="submitForm">
         <h4 class="text-dark fw-normal text-center">Login</h4>
@@ -147,8 +148,11 @@ export default {
     background: url('../../../images/bg1.jpg');
     background-size: cover;
     background-position: center;
+    z-index: 1;
 }
-
+.form{
+    z-index: 3;
+}
 .form .input-group input {
     z-index: 1;
 }

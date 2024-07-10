@@ -4,7 +4,7 @@
         <header class="header d-flex flex-row justify-content-between">
             <div class="header-left">
                 <div class="logo">
-                    <h5 class="text-warning">Finance tracker</h5>
+                    <h5 class="text-success">Finance tracker</h5>
                 </div>
             </div>
 
@@ -14,18 +14,18 @@
                 </div>
 
                 <div>
-                    <a href="#" class="link link1 text-decoration-none fw-bold">Pricing</a>
+                    <router-link to="/pricing" class="link link1 text-decoration-none fw-bold">Pricing</router-link>
                 </div>
 
                 <div>
-                    <a href="#" class="link link1 text-decoration-none fw-bold">About us</a>
+                    <router-link to="/aboutUs" class="link link1 text-decoration-none fw-bold">About Us</router-link>
                 </div>
 
                 <div>
-                    <router-link to="/login" class="btn btn-outline-warning">Login</router-link>
+                    <router-link to="/login" class="btn btn-outline-success">Login</router-link>
                 </div>
                 <div>
-                    <router-link to="/signup" class="btn btn-warning text-dark link link3">Signup</router-link>
+                    <router-link to="/signup" class="btn btn-success text-light link link3">Signup</router-link>
                 </div>
             </div>
 
@@ -62,7 +62,7 @@
                 FINANCE TRACKER
             </h1>
             <p class="text-light">Take control of your finance with ease</p>
-            <router-link to="/login" class="btn btn-warning"><i class="bi bi-arrow-right text-dark"></i> Get started</router-link>
+            <router-link to="/login" class="btn btn-success"><i class="bi bi-arrow-right text-light"></i> Get started</router-link>
         </div>
 
         <div class="container p-3 hero-footer d-flex flex-row align-items-center gap-2">
@@ -71,7 +71,7 @@
             </div>
             <div>
                 <p class="text-light fw-lighter mt-3">
-                    Trusted of over <span class="text-warning">3,000</span> people
+                    Trusted of over <span class="text-success">3,000</span> people
                     worldwide
                 </p>
             </div>
@@ -201,6 +201,9 @@
 <script>
 export default {
     name: "Welcomecomponent",
+    mounted(){
+        console.log('Ang plano ko is mag nasa < 750 width the navigation ma appear sa baba')
+    }
 };
 </script>
 

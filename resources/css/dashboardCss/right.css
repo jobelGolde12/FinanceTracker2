@@ -1,3 +1,6 @@
+.parent-container{
+    display: flex;
+}
 .category .category-logo i{
     border-radius: 3px;
 }

@@ -8,6 +8,6 @@ class SomeQuestionsController extends Controller
 {
     public function getQuestionsData(){
         $data = SomeQuestions::all();
-        return response()->json($data);
+       return response()->json($data);
     }
 }

@@ -5,7 +5,7 @@
         </div>
 
         <div class="container-fluid ">
-            <form action="#" class="form">
+            <form action="#" class="form" @submit.prevent="addTransaction">
                 <div class="mb-2">
                     <label for="date" class="text-dark mb-1">Date</label>
                     <input type="date" class="form-control" id="date" v-model="transactionData.date" required>
@@ -31,7 +31,7 @@
                     <input type="text" class="form-control" id="type" v-model="transactionData.type">
                 </div>
 
-                <button class="btn btn-success mt-2 me-3" @click="addTransaction">Add to transaction</button>
+                <button class="btn btn-success mt-2 me-3" type="submit">Add to transaction</button>
                 <router-link class="btn btn-outline-success mt-2" to="/dashboard/:id/">Back</router-link>
             </form>
         </div>
@@ -68,11 +68,23 @@ export default {
                 return 0;
 
             }
+
+
+            const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+
+            try{
+                if (!csrfToken) {
+                console.error('CSRF token not found');
+                return;
+            } else {
+                console.log('CSRF FOUND');
+            }
             const res = await fetch('http://127.0.0.1:8000/addTransaction', {
                 method: 'POST',
-                headers: {
-                    'Content-type': 'application/json'
-                },
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
                 body: JSON.stringify(this.transactionData)
             })
             if(!res.ok){
@@ -80,6 +92,9 @@ export default {
             }
             const data = await res.json()
             console.log(data)
+            }catch(error){
+                console.log(error);
+            }
         }
     },
     // mounted(){

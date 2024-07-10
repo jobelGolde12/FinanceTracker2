@@ -28,12 +28,16 @@ body{
 .hover:hover, .text-fff:hover{
     color: var(--hover-primary);
 }
+.hover2:hover{
+    color: var(--color-4);
+}
 .bg-glass{
-background: rgba(255, 255, 255, 0.07);
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.53);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(8.4px);
+-webkit-backdrop-filter: blur(8.4px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .color-4{
@@ -64,4 +68,14 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .no-outline:focus {
     outline: none;
-  }
+}
+
+.custom-bg-dark{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+}
+.radius-50{
+    border-radius: 50%;
+}

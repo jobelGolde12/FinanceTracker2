@@ -1,5 +1,5 @@
 <template>
-<div class="bg-light d-flex flex-column gap-5 align-items-center">
+<div class="parent-container bg-light flex-column gap-5 align-items-center">
     <div class="container right-header ps-5 pe-5 pt-4 mb-5 pb-5">
         <form action="#" class="form form-search">
             <div class="input-group mb-2">

@@ -59,6 +59,11 @@ const routes = [
         component: () => import('../components/dashboardFolder/Left.vue')
     },
     {
+        path: '/leftMobileView',
+        name: 'leftMobileView',
+        component: () => import('../components/dashboardFolder/LeftMobileView.vue')
+    },
+    {
         path: '/center',
         name: 'center',
         component: () => import('../components/dashboardFolder/Center.vue')
@@ -72,6 +77,15 @@ const routes = [
         path: '/loading',
         name: 'loading',
         component: () => import('../components/Loading.vue')
+    },
+    {
+        path: '/pricing',
+        name: 'pricing',
+        component: () => import('../components/welcome/Pricing.vue')
+    },{
+        path: '/aboutUs',
+        name: 'aboutUs',
+        component: () => import('../components/welcome/AboutUs.vue')
     },
     {
         path: '/someQuestions',

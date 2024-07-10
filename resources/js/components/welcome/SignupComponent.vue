@@ -1,6 +1,7 @@
 <template>
 <div class="login-body d-flex justify-content-center align-items-center">
 
+    <div class="custom-bg-dark"></div>
     <form @submit.prevent="submitForm" class="form bg-glass p-4">
         <h4 class="text-dark fw-normal text-center">Signup</h4>
 
@@ -181,8 +182,11 @@ export default {
     background: url('../../../images/bg1.jpg');
     background-size: cover;
     background-position: center;
+    z-index: 1;
 }
-
+.form{
+    z-index: 3;
+}
 .form .input-group input {
     z-index: 1;
 }

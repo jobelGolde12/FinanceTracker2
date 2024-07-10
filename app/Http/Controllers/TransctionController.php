@@ -11,18 +11,23 @@ class TransctionController extends Controller
     {
 
         $validated = $request->validate([
-            'user_id' => 'required|integer|exists:user,id',
+            'user_id' => 'required|integer|exists:users,id',
             'date' => 'required|date',
             'category' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'amount' => 'required|numeric',
+            'description' => 'required',
+            'amount' => 'required',
             'type' => 'required|string|max:255|in:income,expense',
         ]);
 
         $transaction = TransactionModel::create($validated);
+
         
 
+       if($transaction){
         return response()->json(['message' => 'Transactions saved successfully', 'transaction' => $transaction]);
+       }else{
+        return response()->json(['error' => 'Transactions not saved']);
+       }
     }
 
 

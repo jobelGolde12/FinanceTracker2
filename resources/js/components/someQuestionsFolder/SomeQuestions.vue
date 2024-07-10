@@ -1,7 +1,7 @@
 <template>
     <div class="main-container bg-light">
-        <Left class="left bg-glass" @questionSelected="questionSelected"/>
-        <Right class="right" />
+        <Left class="left bg-dark " @questionSelected="questionSelected"/>
+        <Right class="right" :currentQuestion="questionSelectedParent" :currentAnswer="currentAnswer"/>
     </div>
 </template>
 
@@ -15,14 +15,15 @@ export default {
     },
     data(){
         return{
-            questionSelectedParent: ''
+            questionSelectedParent: '',
+            currentAnswer: ''
         }
     },
     methods: {
         
         questionSelected(q){
-            this.questionSelectedParent = q;
-            console.log(this.questionSelectedParent)
+            this.questionSelectedParent = q[0];
+            this.currentAnswer = q[1];
         }
     }
 }
@@ -35,6 +36,7 @@ export default {
     height: 100vh;
     display: flex;
     flex-direction: row;
+
 }
 .main-container .left{
     position: relative;
