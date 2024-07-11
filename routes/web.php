@@ -36,8 +36,7 @@ Route::post('/getUsername', [UserController::class, 'getTheUsername']);
 
 
 Route::post('/addTransaction', [TransctionController::class, 'saveTransactions']);
-// Post to a getTransactions because i need to post an id first 
-Route::post('/getTransaction', [TransctionController::class, 'getTransactions']);
+Route::get('/getTransaction', [TransctionController::class, 'getTransactions']);
 
 Route::get('getQuestions', [SomeQuestionsController::class, 'getQuestionsData']);
 

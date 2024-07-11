@@ -3,20 +3,20 @@
 
     <div class="custom-bg-dark"></div>
     <form @submit.prevent="submitForm" class="form bg-glass p-4">
-        <h4 class="text-dark fw-normal text-center">Signup</h4>
+        <h4 class="text-light fw-normal text-center">Signup</h4>
 
         <div>
-            <label class="d-block">Email:</label>
+            <label class="d-block text-light">Email:</label>
             <input type="email" class="email no-outline text-muted" placeholder="mario4545@gmail.com" v-model="email" required>
         </div>
        
         <div>
-            <label class="d-block">Username:</label>
+            <label class="d-block text-light">Username:</label>
             <input type="text" class="username no-outline text-muted" placeholder="Mario" v-model="username" required>
         </div>
 
         <div class="input-group mb-2 mt-2">
-            <label class="d-block" >Password: </label>
+            <label class="d-block text-light" >Password: </label>
             <input type="password" class="password no-outline text-muted" placeholder="supermario123" v-model="password" required id="password">
             <i class="bi bi-eye me-2 pt-1 pointer hover mt-2" @click="toggleEyeFunc"></i>
             <i class="bi bi-eye-slash me-2 pt-1 pointer hover mt-2" @click="toggleEyeFunc"></i>
@@ -25,7 +25,7 @@
         <p class="text-danger mt-0 mb-1" v-if="passwordNotLessThan8Char">Password not less than 8 character</p>
 
         <div class="input-group mb-3 mt-2">
-            <label class="d-block" >Confirm password: </label>
+            <label class="d-block text-light" >Confirm password: </label>
             <input type="password" class="password no-outline text-muted" placeholder="supermario123" aria-label="confirm password" aria-describedby="basic-addon1" id="confirmPassword" v-model="confirmPassword" required>
             <i class="bi bi-eye eye2 me-2 pt-1 pointer hover mt-2" @click="toggleEyeFunc2"></i>
             <i class="bi bi-eye-slash eye-close2 me-2 pt-1 pointer hover mt-2" @click="toggleEyeFunc2"></i>
@@ -36,7 +36,7 @@
         <button class="btn btn-light" @click="submitForm">Signup</button>
 
         <div class="container text-center mt-2">
-            <p class="text-dark">Already have an account? | <router-link to="/login" class="text-">login</router-link>
+            <p class="text-light">Already have an account? | <router-link to="/login" class="text-">login</router-link>
             </p>
         </div>
 

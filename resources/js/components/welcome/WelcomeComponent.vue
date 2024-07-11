@@ -201,9 +201,6 @@
 <script>
 export default {
     name: "Welcomecomponent",
-    mounted(){
-        console.log('Ang plano ko is mag nasa < 750 width the navigation ma appear sa baba')
-    }
 };
 </script>
 

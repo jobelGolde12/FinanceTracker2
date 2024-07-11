@@ -20,6 +20,7 @@ const routes = [
         path: '/dashboard/:id/',
         name: 'dashboard',
         component: () => import('../components/dashboardFolder/DashboardComponent.vue'),
+        props: true,
         children: [
             {
                 path: '',
@@ -43,7 +44,7 @@ const routes = [
             },
             {
                 path: 'viewTransaction:index',
-                name: 'viewTransaction',
+                name: 'viewTransactionWithIndex',
                 component: () => import('../components/dashboardFolder/centerContent/ViewTransaction.vue')
             },
             {

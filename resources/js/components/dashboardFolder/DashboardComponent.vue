@@ -1,14 +1,14 @@
 <template>
     <div class="dashboard-main-container">
 
-        <leftComponent class="left bg-light" />
+        <leftComponent class="left bg-light" :id="id"/>
 
-        <LeftMobileView class=" left-mobile-view" />
+        <LeftMobileView class=" left-mobile-view" :id="id"/>
 
         <div class="left-dark" @click="closeNavBar"></div>
 
         <div class="center bg-light">
-            <router-view :id="id" ></router-view>
+            <router-view></router-view>
             <!-- @openNavBar="openNavBar" -->
         </div>
 
@@ -27,8 +27,8 @@ export default{
     name: 'dashboard',
     data(){
         return{
-            id: this.$route.params.id,
-            isNavBarIsClicked: false
+            isNavBarIsClicked: false,
+            id: this.$route.params.id
         }
     },
     components: {

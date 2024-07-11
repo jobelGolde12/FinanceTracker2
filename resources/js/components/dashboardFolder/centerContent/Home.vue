@@ -96,6 +96,7 @@ export default {
                 liabilities: 5000,
                 currentNetworth: 0
             },
+            id: this.$route.params.id,
         //             props: {
         //     userData: {
         //     type: Object,
@@ -187,9 +188,6 @@ export default {
         }
         
     },
-    props: [
-        'id'
-    ],
     
     methods: {
         getNetworthChart() {
@@ -334,18 +332,30 @@ export default {
             this.userData.username = data.username;
         },
         async fetchTransaction(){
+
             try{
+
+            const crfToken = document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute("content");
+
+                if(crfToken){
+                    console.log('Token found')
+                }else{
+                    console.log('Token not found')
+                }
+
                 const res = await fetch('http://127.0.0.1:8000/getTransaction', {
-                method: 'POST',
+                method: 'GET',
                 headers: {
-                    'Content-type' : 'application/json' 
-                },
-                body: JSON.stringify(this.id)
+                    'Content-type' : 'application/json' ,
+                     'X-CSRF-TOKEN': crfToken
+                }
             })
 
             const data = await res.json();
             if(!res.ok){
-                throw new Error('An error while fetching data', res.status)
+                throw new Error('An error while fetching data, response = ' + res.status)
             }else{
                 console.log('data was fetch successfully...', data)
             }
@@ -370,8 +380,12 @@ export default {
         this.getUsername()
         this.fetchTransaction()
         this.getCurrentNetworth()
-        console.log("From home this id is, " + this.id)
-    }
+    },
+    beforeRouteUpdate(to, from, next) {
+    // Force a re-render by updating a key
+    this.$forceUpdate();
+    next();
+  }
 }
 </script>
 

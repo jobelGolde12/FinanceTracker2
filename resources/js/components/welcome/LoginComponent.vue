@@ -10,16 +10,16 @@
     <div class="custom-bg-dark"></div>
     <!-- This is the actual form for loggin in  -->
     <form class="form bg-glass p-4" @submit.prevent="submitForm">
-        <h4 class="text-dark fw-normal text-center">Login</h4>
+        <h4 class="text-light fw-normal text-center">Login</h4>
         <div>
-            <label class="d-block">
+            <label class="d-block text-light">
                 Username: 
             </label>
             <input class="px-1 py-2 text-muted no-outline" type="text" placeholder="Mario" v-model="formData.name" required id="username">
         </div>
 
         <div class="input-group mb-2 mt-2">
-            <label class="d-block" >Password: </label>
+            <label class="d-block text-light" >Password: </label>
             <input type="password" class="password no-outline text-muted" placeholder="supermario123" v-model="formData.password" required id="password">
             <i class="bi bi-eye me-2 pt-1 pointer hover mt-2" @click="toggleEyeFunc"></i>
             <i class="bi bi-eye-slash me-2 pt-1 pointer hover mt-2" @click="toggleEyeFunc"></i>
@@ -30,7 +30,7 @@
             Login
         </button>
         <div class="container text-center mt-2">
-            <p class="text-dark">
+            <p class="text-light">
                 Didn't have an account? |
                 <router-link to="/signup" class="">signup</router-link>
             </p>

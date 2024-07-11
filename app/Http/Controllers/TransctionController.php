@@ -31,17 +31,13 @@ class TransctionController extends Controller
     }
 
 
-    public function getTransactions(Request $request){
-        // $validate = $request->validate([
-        //     'user_id' => 'required|integer|exists:user,id'
-        // ]);
-
-        $transaction = TransactionModel::find($request->id);
+    public function getTransactions(){
+        $transaction = TransactionModel::all();
         if($transaction){
             return response()->json(['data' => $transaction], 201);
         }else{
             return response()->json(['error' => 'transaction not found'], 401);
 
-        }
+        }   
     }
 }
