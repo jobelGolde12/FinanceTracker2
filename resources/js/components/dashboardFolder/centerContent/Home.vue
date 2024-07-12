@@ -110,78 +110,6 @@ export default {
                     "description": "Groceries",
                     "amount": 75.50,
                     "type": "Expense"
-                },
-                {
-                    "id": 2,
-                    "date": "2024-06-21",
-                    "category": "Income",
-                    "description": "Salary Payment",
-                    "amount": 2500.00,
-                    "type": "Income"
-                },
-                {
-                    "id": 3,
-                    "date": "2024-06-20",
-                    "category": "Utilities",
-                    "description": "Electricity Bill",
-                    "amount": 120.75,
-                    "type": "Expense"
-                },
-                {
-                    "id": 3,
-                    "date": "2024-06-19",
-                    "category": "Entertainment",
-                    "description": "Dining Out",
-                    "amount": 45.30,
-                    "type": "Expense"
-                },
-                {
-                    "id": 4,
-                    "date": "2024-06-18",
-                    "category": "Health",
-                    "description": "Gym Membership",
-                    "amount": 60.00,
-                    "type": "Expense"
-                },
-                {
-                    "id": 5,
-                    "date": "2024-06-17",
-                    "category": "Income",
-                    "description": "Freelance Project",
-                    "amount": 500.00,
-                    "type": "Income"
-                },
-                {
-                    "id": 6,
-                    "date": "2024-06-16",
-                    "category": "Entertainment",
-                    "description": "Netflix Subscription",
-                    "amount": 15.99,
-                    "type": "Expense"
-                },
-                {
-                    "id": 8,
-                    "date": "2024-06-15",
-                    "category": "Transportation",
-                    "description": "Public Transport",
-                    "amount": 30.00,
-                    "type": "Expense"
-                },
-                {
-                    "id": 9,
-                    "date": "2024-06-14",
-                    "category": "Housing",
-                    "description": "Home Rent",
-                    "amount": 1200.00,
-                    "type": "Expense"
-                },
-                {
-                    "id": 10,
-                    "date": "2024-06-13",
-                    "category": "Income",
-                    "description": "Investment Dividend",
-                    "amount": 100.00,
-                    "type": "Income"
                 }
             ]
 
@@ -280,8 +208,8 @@ export default {
             }
         },
         ResentTransactionDataFunc() {
+            let mainContainer = document.querySelector('.main-container')
             if (this.resentTransactionsData.length >= 4) {
-                let mainContainer = document.querySelector('.main-container')
                 mainContainer.style.maxHeight = '50%'
                 this.resentTransactionTableExpanded = false
                 console.log('50%')
@@ -352,12 +280,13 @@ export default {
                      'X-CSRF-TOKEN': crfToken
                 }
             })
-
             const data = await res.json();
+
             if(!res.ok){
                 throw new Error('An error while fetching data, response = ' + res.status)
             }else{
-                console.log('data was fetch successfully...', data)
+                console.log('data was fetch successfully...' + data)
+                this.resentTransactionsData = JSON.parse(data);
             }
             }catch(error){
                 console.log('An error while fetching data', error)

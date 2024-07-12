@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TransactionModel extends Model
 {
     use HasFactory;
+    protected $table = 'transaction';
     protected $fillable = [
         'date',
         'category',

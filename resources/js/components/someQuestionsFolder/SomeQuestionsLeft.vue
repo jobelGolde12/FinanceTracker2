@@ -55,7 +55,7 @@ export default {
                     
                 } 
                 const data = await res.json();
-                // console.log(" From left The data is, " + data)
+                console.log(" From left The data is, " + data)
                 this.questions = data;
                 this.loadingData = false;
             }catch(error){

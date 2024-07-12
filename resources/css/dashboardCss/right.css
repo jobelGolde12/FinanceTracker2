@@ -67,3 +67,8 @@
     transition: .3s;
     font-size: .8rem;
 }
+.add-icon{
+    font-size: 1.5rem;
+    top: -2%;
+    position: relative;
+}

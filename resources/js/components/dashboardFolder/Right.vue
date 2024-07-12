@@ -9,7 +9,13 @@
         </form>
 
         <div class="category-container p-0 bg-light p-2" style="max-height: 35%; overflow-y: auto;">
-            <h5 class="text-dark text-dark fw-light">Categories</h5>
+            <div class="d-flex flex-row justify-content-between">
+                <h5 class="text-dark text-dark fw-light">Categories</h5>
+                <!-- <button class="btn btn-outline-success">New category</button> -->
+               <div class="pointer text-success d-flex flex-row align-items-center">
+                <i class="bi bi-plus fw-bold add-icon"></i>Add
+               </div>
+            </div>
             <div class="category d-flex flex-row align-items-center pointer" v-for="data in categoriesData" :key="data.id">
                 <div class="category-logo">
                     <i class="text-success px-2 py-1 fw-normal me-2" :class="data.logo"></i>
@@ -25,6 +31,7 @@
             </div>
         </div>
 
+        
     </div>
 
 
